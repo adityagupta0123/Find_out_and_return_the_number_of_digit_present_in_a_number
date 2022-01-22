@@ -7,12 +7,21 @@ public class previsionNumber {
         Scanner sc =new Scanner(System.in );
         System.out.println("Enter the Number to find Number Recursively :");
         int n = sc.nextInt();
-        previsionNumber obj = new previsionNumber();
+
         System.out.println("Natural numbers till "+n+" : ");
-        obj.number(n, 1);
+        number(n, 1);
+        System.out.println("\n==========");
+        number(n);
+
 
     }
-    int number(int a, int b){
+    public static void number(int n) {
+        if (n == 0)
+            return;
+        number(n - 1);
+        System.out.print(n + " ");
+    }
+    public static int number(int a, int b){
         if (b <= a) {
             System.out.print(b + " ");
             return (number( a, ++b ));
@@ -20,4 +29,7 @@ public class previsionNumber {
         return 1;
     }
 
-}
+    }
+
+
+
